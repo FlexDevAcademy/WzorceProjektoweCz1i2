@@ -6,17 +6,25 @@ using System.Threading.Tasks;
 
 namespace FasadaDemo
 {
-    internal class Resturant
+    internal class Restaurant
     {
-        private int ingredients(quest)
+        private int ingredients = 0;
         public double EstimateCost(int guest)
         {
             return guest * 100;
 
         }
-        public void BuyIngredients(int quest)
+        public void BuyIngredients(int guest)
         {
-
+            ingredients = guest;
+        }
+        public bool GetDishes(int guest)
+        {
+            if (ingredients >= guest) 
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
