@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryMethodDemo", "Factor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuilderDemo", "BuilderDemo\BuilderDemo.csproj", "{16760A5E-D8A5-4CD9-A30E-0715B7CD47C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterDemo", "AdapterDemo\AdapterDemo.csproj", "{4725BD29-D62A-456A-AB92-C9ED06EF8AD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdapterDemo", "AdapterDemo\AdapterDemo.csproj", "{4725BD29-D62A-456A-AB92-C9ED06EF8AD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasadaDemo", "FasadaDemo\FasadaDemo.csproj", "{C08120CB-FFD3-45C0-804E-6B38F6B41452}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4725BD29-D62A-456A-AB92-C9ED06EF8AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4725BD29-D62A-456A-AB92-C9ED06EF8AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4725BD29-D62A-456A-AB92-C9ED06EF8AD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08120CB-FFD3-45C0-804E-6B38F6B41452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08120CB-FFD3-45C0-804E-6B38F6B41452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08120CB-FFD3-45C0-804E-6B38F6B41452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08120CB-FFD3-45C0-804E-6B38F6B41452}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
