@@ -1,19 +1,14 @@
 ﻿namespace BuilderDemo
 {
-    public interface IBuilder
-    {
-        void BuildFloors();
 
-        void BuildWalls();
-
-        void BuildRoof();
-    }
+    // w tej klasie przypisane zostaja poszczegolne czynnosci/metody dla Builderow. "Rozkaz" wychodzi z klasy director, w ktorej zainicjowane sa metody (zadania) opisane w tej klasie
+    // tu nastepuje rozbicie funkcjonalnosci na poszczegolne metody, ktore w naszym wypadku zarzadzane sa klasa Director
 
     public class HouseBuilder : IBuilder
     {
         private House _house = new House();
 
-        public HouseBuilder()
+        public HouseBuilder() //przy kazdym utworzeniu nowej instancji tego obiektu, usuwane zostaja poprzednie wartosci aby moc przyjmowac kolejne elementy
         {
             this.Reset();
         }
@@ -22,6 +17,7 @@
         {
             this._house = new House();
         }
+        // metody odpowiedzialne za wykonanie zadan (wpisanie do listy zadan) dla builderow
         public void BuildFloors()
         {
             this._house.Add("BuildFloors");
@@ -37,59 +33,14 @@
             this._house.Add("BuildRoof");
         }
 
-        public House GetProduct()
+        public House GetProduct() // zwraca zadania z listy (parts), ktore zostaly wykonane na kazdym z obiektow House
         {
             House result = this._house;
 
-            this.Reset();
+            this.Reset(); //wyczyszczenie obiektu House zanim utworzy sie nowy przed wykonywaniem kolejnych zadan
 
             return result;
         }
     }
-
-    public class House
-    {
-        private List<object> _parts = new List<object>();
-
-        public void Add(string part)
-        {
-            this._parts.Add(part);
-        }
-
-        public string ListParts()
-        {
-            string str = string.Empty;
-
-            for (int i = 0; i < this._parts.Count; i++)
-            {
-                str += this._parts[i] + ", ";
-            }
-
-            str = str.Remove(str.Length - 2);
-
-            return "House parts: " + str + "\n";
-        }
-    }
-
-    public class Director
-    {
-        private IBuilder _builder;
-
-        public IBuilder Builder
-        {
-            set { _builder = value; }
-        }
-
-        public void BuildMinimalViableProduct()
-        {
-            this._builder.BuildFloors();
-        }
-
-        public void BuildFullFeaturedProduct()
-        {
-            this._builder.BuildFloors();
-            this._builder.BuildWalls();
-            this._builder.BuildRoof();
-        }
-    }
 }
+  
